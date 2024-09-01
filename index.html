@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link
+    href="https://fonts.googleapis.com/css2?family=Handlee&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Lexend:wght@100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Satisfy&display=swap"
+    rel="stylesheet">
+<link
+    href="https://fonts.googleapis.com/css2?family=Handlee&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Lexend:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Satisfy&display=swap"
+    rel="stylesheet">
+<link
+    href="https://fonts.googleapis.com/css2?family=Handlee&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Satisfy&display=swap"
+    rel="stylesheet">
+<link
+    href="https://fonts.googleapis.com/css2?family=Handlee&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Satisfy&display=swap"
+    rel="stylesheet">
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div  class="logo"><img id="logophoto"  src="logo.JPG" alt=""></div>
+            <ul class="nav-links">
+                <li><a onclick="random()" href="#home">Home</a></li>
+                <li><a onclick="fetchNews('Marvel');" href="#world">Marvel</a></li>
+                <li><a onclick="fetchNews('Disney');" href="#politics">Disney</a></li>
+                <li><a onclick="fetchNews('Hollywood')" href="#sports">Hollywood</a></li>
+                <li><a onclick="fetchNews('Starwars')" href="#entertainment">Star Wars</a></li>
+            </ul>
+            <div class="search-bar">
+                <input id="search-input" type="text" placeholder="Search...">
+                <button id="searchbutton" onclick="searchNews()">Search</button>
+            </div>
+             
+        </nav>
+    </header>
+   
+    <div id="news-container" class="news-container"></div>
+    <template id="template-news-card">
+        <div class="card">
+            <div class="card-header">
+                <img src="https://via.placeholder.com/400x200" alt="news-image" class="news-img">
+            </div>
+            <div class="card-content">
+                <h3 class="news-title">This is the Title</h3>
+                <h6 class="news-source">Source Name · Date</h6>
+                <p class="news-desc">Description</p>
+            </div>
+        </div>
+    </template>
+    <script> const search = document.getElementById('search-input');
+
+        function searchNews() {
+            const query = search.value.trim();
+            fetchNews(query);
+            search.value='';
+        }
+        search.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        searchNews(); // Call the search function if Enter is pressed
+    }
+})</script>
+    <script src="script.js"></script>
+    <script src="topics.js"></script>
+</body>
+</html>
